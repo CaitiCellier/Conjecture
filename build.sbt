@@ -5,7 +5,7 @@ import com.gramercysoftware.multipublish.MultiPublish._
 
 name := "conjecture"
 
-version := "0.1.17-SNAPSHOT"
+version := "0.1.18-SNAPSHOT"
 
 organization := "com.etsy"
 
