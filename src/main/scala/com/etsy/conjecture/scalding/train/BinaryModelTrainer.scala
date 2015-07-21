@@ -36,6 +36,7 @@ class BinaryModelTrainer(args: Args) extends AbstractModelTrainer[BinaryLabel, U
      *  2. adagrad
      *  3. passive_aggressive
      *  4. ftrl
+     *  5. hands_free
      */
     val optimizerType = args.getOrElse("optimizer", "elastic_net")
 
@@ -93,6 +94,7 @@ class BinaryModelTrainer(args: Args) extends AbstractModelTrainer[BinaryLabel, U
             case "ftrl" => new FTRLOptimizer().setAlpha(ftrlAlpha).setBeta(ftrlBeta)
             case "control" => new ControlOptimizer()
             case "mira" => new MIRAOptimizer()
+            case "hands_free" => new HandsFreeOptimizer()
         }
 
     val optimizer = o.setGaussianRegularizationWeight(gauss)
